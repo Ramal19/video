@@ -17,6 +17,7 @@ const slider = document.querySelector(".slider");
 const volume = document.getElementById("volume");
 let header = document.querySelector("header")
 let sideBar = document.querySelector(".side-bar");
+console.log(video.controls);
 
 let timer;
 
