@@ -288,8 +288,13 @@ button {
         display: none;
     }
 
+    .con > .main-container {
+
+        width: 100%;
+    }
+
     .con>.main-container>.video-container {
 
-        width: 600px;
+        width: 100%;
     }
 }
