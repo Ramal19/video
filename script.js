@@ -35,8 +35,8 @@ logo.addEventListener("click", () => {
 })
 
 fullScreen.addEventListener("click", () => {
-    const width = parseFloat(getComputedStyle(videoCon).width); 
-    const sideBarwidthFull = parseFloat(getComputedStyle(sideBar).width); 
+    const width = parseFloat(getComputedStyle(videoCon).width);
+    const sideBarwidthFull = parseFloat(getComputedStyle(sideBar).width);
 
 
     if (width !== window.innerWidth) {
@@ -126,7 +126,7 @@ videoSpeed.addEventListener("click", () => {
                    top: ${(videoConWidth - 920) + 'px'};
                    left: 60px;
                    `
-// transform: translateY(365px) translateX(-1220px);
+        // transform: translateY(365px) translateX(-1220px);
         let speedTimer = document.querySelectorAll("#speedTimer > span");
 
         speedTimer.forEach((el, index) => {
@@ -252,6 +252,7 @@ let continueBtn = null
 if (video.paused) {
     continueBtn = document.createElement("button");
     videoPanel.appendChild(continueBtn);
+    continueBtn.id = "continueBtn"
 
     continueBtn.innerHTML = `<i class="bi bi-play-fill"></i>`;
     continueBtn.style.cssText =
@@ -337,8 +338,8 @@ genis.addEventListener("click", () => {
         videoCon.style.width = totalWidth + 'px';
         sideBar.style.display = "none";
 
-        continueBtn.style.cssText = 
-        `
+        continueBtn.style.cssText =
+            `
         width: 100px;
         height: 100px;
         display: flex;
@@ -353,7 +354,7 @@ genis.addEventListener("click", () => {
         `
 
         console.log(speedTimerCon);
-        
+
     } else {
         videoCon.style.width = "1280px";
         genis.innerHTML = `<i class="bi bi-arrows"></i>`
