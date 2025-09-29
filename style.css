@@ -287,4 +287,9 @@ button {
 
         display: none;
     }
+
+    .con>.main-container>.video-container>.video-con>video {
+
+        width: 600px;
+    }
 }
