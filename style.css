@@ -81,7 +81,7 @@ header>.navbar {
 }
 
 .video-panel>#continue-btn {
-    
+
     width: 100px;
     height: 100px;
     position: absolute;
@@ -370,4 +370,9 @@ button {
         text-align: center;
         cursor: pointer;
     }
-}                       
+
+    .con>.side-bar {
+
+        width: 100%;
+    }
+}
