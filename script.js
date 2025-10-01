@@ -1,4 +1,3 @@
-
 const con = document.querySelector(".con")
 const btn = document.getElementById("btn");
 const video = document.querySelector("video");
@@ -15,9 +14,51 @@ const fullScreen = document.getElementById("full-screen");
 const logo = document.getElementById("logo");
 const slider = document.querySelector(".slider");
 const volume = document.getElementById("volume");
-let header = document.querySelector("header")
+let topic = document.querySelectorAll(".topicSubject")
+let lessons = document.querySelectorAll(".lessons");
+let iconDown = document.querySelectorAll(".bi-chevron-down")
+let one = document.querySelectorAll(".one")
 let sideBar = document.querySelector(".side-bar");
-console.log(video.controls);
+let header = document.querySelector("header")
+
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 57) {
+        header.style.transform = "translateY(-55px)";
+        sideBar.style.top = "0"
+        header.style.transition = "all 0.3s ease"
+    } else {
+
+        header.style.transform = "translateY(0)"
+        sideBar.style.top = "55px"
+    }
+    console.log(window.scrollY);
+
+})
+
+topic.forEach((el, index) => {
+
+    el.addEventListener("click", () => {
+
+        const current = getComputedStyle(lessons[index]).display;
+
+        if (current === "none") {
+
+            lessons[index].style.display = "flex";
+            iconDown[index].classList.remove("bi-chevron-down");
+            iconDown[index].classList.add("bi-chevron-up");
+            one.forEach((btn, index) => {
+                btn.addEventListener("click", () => { video.src = "../video/Js-ders.mp4" })
+            })
+        } else {
+
+            lessons[index].style.display = "none"
+            iconDown[index].classList.remove("bi-chevron-up");
+            iconDown[index].classList.add("bi-chevron-down");
+        }
+    })
+})
 
 let timer;
 
@@ -51,6 +92,8 @@ fullScreen.addEventListener("click", () => {
         genis.style.display = "none"
         header.style.display = "none"
         sideBar.style.display = "none"
+        console.log(speedCon);
+
 
         if (continueBtn) {
             continueBtn.style.cssText = `
@@ -124,7 +167,7 @@ videoSpeed.addEventListener("click", () => {
                    color: #fff;
                    position: absolute;
                    top: ${(videoConWidth - 920) + 'px'};
-                   left: 60px;
+                   left: 20px;
                    `
         // transform: translateY(365px) translateX(-1220px);
         let speedTimer = document.querySelectorAll("#speedTimer > span");
@@ -252,23 +295,9 @@ let continueBtn = null
 if (video.paused) {
     continueBtn = document.createElement("button");
     videoPanel.appendChild(continueBtn);
-    continueBtn.id = "continueBtn"
+    continueBtn.id = "continue-btn";
 
     continueBtn.innerHTML = `<i class="bi bi-play-fill"></i>`;
-    continueBtn.style.cssText =
-        `
-                    width: 100px;
-                    height: 100px;
-                    position: absolute;
-                    top: calc(-720px / 2);
-                    left: calc(1280px /2);
-                    font-size: 48px;
-                    background-color: #00000078;
-                    border-radius: 9999px;
-                    text-align: center;
-                    cursor: pointer;
-                `
-    console.log("salam");
 
     if (videoCon.style.width === "100%") {
         console.log("salam");
@@ -361,7 +390,7 @@ genis.addEventListener("click", () => {
         videoTimeCon.style.width = "1280px"
         videoPanel.style.width = "1280px"
         sideBar.style.display = "flex"
-
+        sideBar.style.flexDirection = "column"
     }
 });
 

@@ -80,6 +80,20 @@ header>.navbar {
     position: relative;
 }
 
+.video-panel>#continue-btn {
+    
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: calc(-720px / 2);
+    left: calc(1280px /2);
+    font-size: 48px;
+    background-color: #00000078;
+    border-radius: 9999px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .video-panel>.bottom {
     width: 100%;
     display: flex;
@@ -343,17 +357,17 @@ button {
         height: 30px;
     }
 
-    .video-panel>.continue-btn {
+    .video-panel>#continue-btn {
 
         width: 100px;
         height: 100px;
         position: absolute;
         top: calc(-720px / 2);
-        left: 0;
+        left: 300px;
         font-size: 48px;
         background-color: #00000078;
         border-radius: 9999px;
         text-align: center;
         cursor: pointer;
     }
-}
+}                       
